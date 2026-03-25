@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>海龟汤小游戏</title>
+  <style>
+    body {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial;
+    }
+    .tangmian {
+      font-size: 18px;
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #0070f3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .answer {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>海龟汤小游戏</h1>
+
+  <div class="tangmian">
+    <strong>汤面：</strong><br>
+    一个人躺在床上睡不着，打了一个电话，没说话就挂了，然后睡着了。
+  </div>
+
+  <input type="text" id="question" placeholder="输入你的问题（只能问是/不是类）">
+  <button onclick="ask()">提问</button>
+  <button onclick="showAnswer()">查看答案</button>
+
+  <div class="answer" id="answer" style="display:none">
+    <strong>汤底：</strong><br>
+    邻居打呼噜太吵，他打电话把邻居吵醒，呼噜停了，他就睡着了。
+  </div>
+
+  <script>
+    function ask() {
+      let q = document.getElementById("question").value.toLowerCase();
+      if (q.includes("打呼噜") || q.includes("邻居") || q.includes("吵")) {
+        alert("是！");
+      } else {
+        alert("不是 / 不重要");
+      }
+    }
+
+    function showAnswer() {
+      document.getElementById("answer").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
